@@ -1,0 +1,11 @@
+.vscode
+
+# Certificates/Secrets
+*.pfx
+*.cer
+*.pem
+*.key
+*.crt
+*.bak
+secrets/
+*.env
