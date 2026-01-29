@@ -1,0 +1,96 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Input.Text",
+            "label": "Sender's Email",
+            "placeholder": "Enter the sender's email address (e.g., vendor@example.com)",
+            "id": "SenderEmail",
+            "isRequired": true,
+            "errorMessage": "Please provide sender's email"
+        },
+        {
+            "type": "Input.Text",
+            "label": "Subject",
+            "placeholder": "Type a keyword or subject of the missing email (e.g., Invoice, Meeting Agenda)",
+            "id": "Subject"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Select Time Range",
+            "weight": "Bolder",
+            "size": "Medium",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Specific Date",
+                    "targetElements": [
+                        {
+                            "elementId": "specificDateContainer",
+                            "isVisible": true
+                        },
+                        {
+                            "elementId": "dateRangeContainer",
+                            "isVisible": false
+                        }
+                    ]
+                },
+                {
+                    "type": "Action.ToggleVisibility",
+                    "title": "Date Range",
+                    "targetElements": [
+                        {
+                            "elementId": "dateRangeContainer",
+                            "isVisible": true
+                        },
+                        {
+                            "elementId": "specificDateContainer",
+                            "isVisible": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "specificDateContainer",
+            "isVisible": false,
+            "items": [
+                {
+                    "type": "Input.Date",
+                    "label": "Enter Specific Date",
+                    "id": "SpecificDate",
+                    "errorMessage": "Please enter a date within the last 10 days"
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "dateRangeContainer",
+            "isVisible": false,
+            "items": [
+                {
+                    "type": "Input.Number",
+                    "label": "How many days ago did the email come?",
+                    "placeholder": "Enter the number of days (e.g., 5 for emails from the past 5 days)",
+                    "id": "DateRange",
+                    "min": 1,
+                    "max": 10,
+                    "errorMessage": "Please enter the number of days"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Submit"
+        }
+    ]
+}
