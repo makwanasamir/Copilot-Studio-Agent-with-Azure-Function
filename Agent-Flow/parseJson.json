@@ -1,0 +1,92 @@
+{
+    "type": "object",
+    "properties": {
+        "mostRecentMessageDetail": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Organization": {
+                        "type": "string"
+                    },
+                    "MessageTraceId": {
+                        "type": "string"
+                    },
+                    "MessageId": {
+                        "type": "string"
+                    },
+                    "Date": {
+                        "type": "string"
+                    },
+                    "Event": {
+                        "type": "string"
+                    },
+                    "Action": {
+                        "type": "string"
+                    },
+                    "Detail": {
+                        "type": "string"
+                    },
+                    "Data": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "totalEmails": {
+            "type": "integer"
+        },
+        "mostRecentMessage": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "Recipient": {
+                    "type": "string"
+                },
+                "SenderAddress": {
+                    "type": "string"
+                },
+                "MessageTraceId": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "string"
+                },
+                "Received": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            }
+        },
+        "statusReport": {
+            "type": [
+                "object",
+                "array"
+            ],
+            "properties": {
+                "Status": {
+                    "type": "string"
+                },
+                "Count": {
+                    "type": "integer"
+                }
+            }
+        },
+        "summaryMessage": {
+            "type": "string"
+        },
+        "endDate": {
+            "type": "string"
+        },
+        "startDate": {
+            "type": "string"
+        }
+    }
+}
